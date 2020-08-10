@@ -8,10 +8,11 @@ finestra.title("Calculadora")
 i = 0
 
 #creem l'entrada de text
-text = Entry(finestra, font = "Calibri 20")
+text = Entry(finestra, font = "Arial 20")
 text.grid(row = 0, column = 0, columnspan = 4, pady = 5, padx = 5)
 
-#funcions
+#---------funcions
+#funció que escriu a la caixa de text el valor equivalent a la tecla pitjada
 def boto_seleccionat(valor):
     global i #accedim a l'índex
     if i == 0:
@@ -19,9 +20,12 @@ def boto_seleccionat(valor):
     text.insert(i, valor)
     i +=1 #augmentem l'índex
 
+#funció que esborra tot el text de la caixa de text
 def esborrar_text():
     text.delete(0, END)
 
+#funció que calcula el resultat de l'operació escrita en la caixa de text i, si no es pot,
+#dona un missatge d'error
 def calcular():
     global i
     operacio = text.get()
@@ -82,6 +86,5 @@ boto0.grid(row = 5, column = 0, columnspan = 2)
 boto_punt.grid(row = 5, column = 2)
 boto_igual.grid(row = 5, column = 3)
 
-
-
+#generem el loop de la finestra
 finestra.mainloop()
