@@ -1,2 +1,2 @@
 # Calculadora
-Calculadora bàsica
+Calculadora bàsica amb Python i la llibreria tkinter
