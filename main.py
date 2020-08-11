@@ -3,6 +3,7 @@ from tkinter import *
 #creem la finestra
 finestra = Tk()
 finestra.title("Calculadora")
+finestra.iconbitmap(r"icona_calculadora.ico")
 
 #creem un índex per poder introduir els valors a la caixa de text en l'ordre correcte
 i = 0
