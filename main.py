@@ -40,10 +40,7 @@ def calcular():
     try:
         resultat = eval(operacio)
     except Exception:
-        if operacio[-1] == "=":
             resultat = "Error"
-        else:
-            resultat = " "
     return resultat
     
 
@@ -52,7 +49,10 @@ def res_parcial():
     global i
     if i != 0:
         resultat = calcular()
-        mostrar_text(finestra_resultat, resultat)
+        if resultat != "Error":
+            mostrar_text(finestra_resultat, resultat)
+        else:
+            esborrar_text(finestra_resultat)
 
 #funció que mostra el resultat final d'una operació
 def res_final(nom_finestra):
