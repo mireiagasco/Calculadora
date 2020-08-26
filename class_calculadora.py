@@ -104,7 +104,8 @@ class Calculadora:
         resultat = self.calcular(self.entr_op.get()) #calculem el resultat
         self.esborrar_text(self.entr_op) #netegem la caixa de text
         self.mostrar_text(resultat, self.entr_op) #mostrem el resultat
-
+      
+    #funció que esborra el text de les dues finestres  
     def esborrar_tot(self):
         self.esborrar_text(self.entr_op)
         self.esborrar_text(self.f_res_par)
