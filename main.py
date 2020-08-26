@@ -1,4 +1,5 @@
-from class_calculadora import *
+from class_calculadora import Calculadora
 
-calculadora = Calculadora()
-calculadora.iniciar()
+if __name__ == "__main__":
+    calculadora = Calculadora()
+    calculadora.iniciar()
