@@ -1,10 +1,12 @@
 from tkinter import *
-
+import tkinter.messagebox
 
 #classe que genera una finestra tkinter amb aparença de calculadora
 class Calculadora:
       
     def  __init__(self):        
+
+        self.reiniciar = False
 
         #creem la finestra
         self.finestra = Tk()
@@ -79,7 +81,12 @@ class Calculadora:
 
     #funció que escriu a la caixa de text els valors que es van pitjant
     def boto_seleccionat(self, valor):        
-        
+
+        if self.reiniciar:
+            self.esborrar_text(self.f_res_par)
+            self.esborrar_text(self.entr_op)
+            self.reiniciar = False
+
         #mostrem el nou valor
         actual = self.entr_op.get()
         self.esborrar_text(self.entr_op)
@@ -97,15 +104,22 @@ class Calculadora:
             resultat = eval(operacio)
         except SyntaxError:
             resultat = "Error"
+        except ZeroDivisionError:
+            resultat = "Error"
+            tkinter.messagebox.showerror("Error", "No es pot dividir entre zero")
         return resultat
     
     #funció que mostra el resultat final d'una operació
     def res_final(self):
-        resultat = self.calcular(self.entr_op.get()) #calculem el resultat
-        self.esborrar_text(self.entr_op) #netegem la caixa de text
-        self.mostrar_text(resultat, self.entr_op) #mostrem el resultat
-      
-    #funció que esborra el text de les dues finestres  
+        self.reiniciar = True
+        resultat = self.f_res_par.get()
+        self.esborrar_text(self.entr_op)
+        if resultat:    #si el resultat parcial és vàlid
+            self.mostrar_text(resultat, self.entr_op) #mostrem el resultat
+        else:
+            self.mostrar_text("Error", self.entr_op) #mostrem un error
+
+    #funció que esborra el text de les dues caixes
     def esborrar_tot(self):
         self.esborrar_text(self.entr_op)
         self.esborrar_text(self.f_res_par)
