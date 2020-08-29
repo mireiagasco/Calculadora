@@ -22,52 +22,27 @@ class Calculadora:
         self.f_res_par.grid(row = 1, column = 3, columnspan = 2)
              
         #creem els botons
-        self.boto1 = Button(self.finestra, text = "1", width = 5, height = 2, command = lambda: self.boto_seleccionat('1'))
-        self.boto2 = Button(self.finestra, text = "2", width = 5, height = 2, command = lambda: self.boto_seleccionat('2'))
-        self.boto3 = Button(self.finestra, text = "3", width = 5, height = 2, command = lambda: self.boto_seleccionat('3'))
-        self.boto4 = Button(self.finestra, text = "4", width = 5, height = 2, command = lambda: self.boto_seleccionat('4'))
-        self.boto5 = Button(self.finestra, text = "5", width = 5, height = 2, command = lambda: self.boto_seleccionat('5'))
-        self.boto6 = Button(self.finestra, text = "6", width = 5, height = 2, command = lambda: self.boto_seleccionat('6'))
-        self.boto7 = Button(self.finestra, text = "7", width = 5, height = 2, command = lambda: self.boto_seleccionat('7'))
-        self.boto8 = Button(self.finestra, text = "8", width = 5, height = 2, command = lambda: self.boto_seleccionat('8'))
-        self.boto9 = Button(self.finestra, text = "9", width = 5, height = 2, command = lambda: self.boto_seleccionat('9'))
-        self.boto0 = Button(self.finestra, text = "0", width = 14, height = 2, command = lambda: self.boto_seleccionat('0'))
+        Button(self.finestra, text = "1", width = 5, height = 2, command = lambda: self.boto_seleccionat('1')).grid(row = 4, column = 0)
+        Button(self.finestra, text = "2", width = 5, height = 2, command = lambda: self.boto_seleccionat('2')).grid(row = 4, column = 1)
+        Button(self.finestra, text = "3", width = 5, height = 2, command = lambda: self.boto_seleccionat('3')).grid(row = 4, column = 2)
+        Button(self.finestra, text = "4", width = 5, height = 2, command = lambda: self.boto_seleccionat('4')).grid(row = 3, column = 0)
+        Button(self.finestra, text = "5", width = 5, height = 2, command = lambda: self.boto_seleccionat('5')).grid(row = 3, column = 1)
+        Button(self.finestra, text = "6", width = 5, height = 2, command = lambda: self.boto_seleccionat('6')).grid(row = 3, column = 2)
+        Button(self.finestra, text = "7", width = 5, height = 2, command = lambda: self.boto_seleccionat('7')).grid(row = 2, column = 0)
+        Button(self.finestra, text = "8", width = 5, height = 2, command = lambda: self.boto_seleccionat('8')).grid(row = 2, column = 1)
+        Button(self.finestra, text = "9", width = 5, height = 2, command = lambda: self.boto_seleccionat('9')).grid(row = 2, column = 2)
+        Button(self.finestra, text = "0", width = 14, height = 2, command = lambda: self.boto_seleccionat('0')).grid(row = 5, column = 0, columnspan = 2)
 
-        self.boto_suma = Button(self.finestra, text = "+", width = 5, height = 2, command = lambda: self.boto_seleccionat("+"))
-        self.boto_resta = Button(self.finestra, text = "-", width = 5, height = 2, command = lambda: self.boto_seleccionat("-"))
-        self.boto_multi = Button(self.finestra, text = "*", width = 5, height = 2, command = lambda: self.boto_seleccionat("*"))
-        self.boto_div = Button(self.finestra, text = "/", width = 5, height = 2, command = lambda: self.boto_seleccionat("/"))
+        Button(self.finestra, text = "+", width = 5, height = 2, command = lambda: self.boto_seleccionat("+")).grid(row = 3, column = 3)
+        Button(self.finestra, text = "-", width = 5, height = 2, command = lambda: self.boto_seleccionat("-")).grid(row = 4, column = 3)
+        Button(self.finestra, text = "*", width = 5, height = 2, command = lambda: self.boto_seleccionat("*")).grid(row = 2, column = 3)
+        Button(self.finestra, text = "/", width = 5, height = 2, command = lambda: self.boto_seleccionat("/")).grid(row = 5, column = 3)
 
-        self.boto_igual = Button(self.finestra, text = "=", width = 7, height = 10, command = lambda: self.res_final())
-        self.boto_esborrar = Button(self.finestra, text = "AC", width = 5, height = 2, command = lambda: self.esborrar_tot())
-        self.boto_obrir_parentesi = Button(self.finestra, text = "(", width = 5, height = 2, command = lambda: self.boto_seleccionat("("))
-        self.boto_tancar_parentesi = Button(self.finestra, text = ")", width = 5, height = 2, command = lambda: self.boto_seleccionat(")"))
-        self.boto_punt = Button(self.finestra, text = ".", width = 5, height = 2, command = lambda: self.boto_seleccionat("."))
-
-        #posicionem els botons a la finestra
-        self.boto_esborrar.grid(row = 1, column = 0)
-        self.boto_obrir_parentesi.grid(row = 1, column = 1)
-        self. boto_tancar_parentesi.grid(row = 1, column = 2)
-        self.boto_div.grid(row = 5, column = 3)
-
-        self.boto7.grid(row = 2, column = 0)
-        self.boto8.grid(row = 2, column = 1)
-        self.boto9.grid(row = 2, column = 2)
-        self.boto_multi.grid(row = 2, column = 3)
-
-        self.boto4.grid(row = 3, column = 0)
-        self.boto5.grid(row = 3, column = 1)
-        self.boto6.grid(row = 3, column = 2)
-        self.boto_suma.grid(row = 3, column = 3)
-
-        self.boto1.grid(row = 4, column = 0)
-        self.boto2.grid(row = 4, column = 1)
-        self.boto3.grid(row = 4, column = 2)
-        self.boto_resta.grid(row = 4, column = 3)
-
-        self.boto0.grid(row = 5, column = 0, columnspan = 2)
-        self.boto_punt.grid(row = 5, column = 2)
-        self.boto_igual.grid(row = 2, column = 4, rowspan = 4)
+        Button(self.finestra, text = "=", width = 7, height = 10, command = lambda: self.res_final()).grid(row = 2, column = 4, rowspan = 4)
+        Button(self.finestra, text = "AC", width = 5, height = 2, command = lambda: self.esborrar_tot()).grid(row = 1, column = 0)
+        Button(self.finestra, text = "(", width = 5, height = 2, command = lambda: self.boto_seleccionat("(")).grid(row = 1, column = 1)
+        Button(self.finestra, text = ")", width = 5, height = 2, command = lambda: self.boto_seleccionat(")")).grid(row = 1, column = 2)
+        Button(self.finestra, text = ".", width = 5, height = 2, command = lambda: self.boto_seleccionat(".")).grid(row = 5, column = 2)
 
     #generem el main loop de la finestra
     def iniciar(self):
